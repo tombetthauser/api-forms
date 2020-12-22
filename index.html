@@ -7,9 +7,22 @@
 </head>
 <body>
   <div id="main-column">
-    <h1>API Index Page</h1>
-    <input id="input-field" type="text" placeholder="Paste API url here" value="">
-    <button id="load-button">Load Api</button>
+    <h1>Artists Database API Interface</h1>
+    <!-- <form action="https://tobet-api-01.herokuapp.com/api/users" method="POST"> -->
+      <label for="firstName">First Name:</label>
+      <input type="text" name="firstName" id="firstName">
+      <br>
+      <label for="lastName">Last Name:</label>
+      <input type="text" name="lastName" id="lastName">
+      <br>
+      <label for="email">Email:</label>
+      <input type="text" name="email" id="email">
+      <br>
+      <button style="cursor: pointer" id="add-button">Add Artist to Database</button>
+    <!-- </form> -->
+    <br>
+    <br>
+    <button style="cursor: pointer" id="load-button">Fetch Artists from Database</button>
     <div id="output-div">
       <ul id="output-ul"></ul>
     </div>

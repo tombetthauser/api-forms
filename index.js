@@ -1,5 +1,5 @@
 document.querySelector("#load-button").addEventListener("click", async () => {
-  let val = document.querySelector("#input-field").value;
+  // let val = document.querySelector("#input-field").value;
   
   // fetch("https://tobet-api-01.herokuapp.com/api/users")
   //   .then(response => response.json())
@@ -49,3 +49,51 @@ function createArtistLi(pojo) {
   
   return newLi;
 }
+
+
+
+document.querySelector("#add-button").addEventListener("click", () => {
+  let first = document.querySelector("#firstName").value;
+  let last = document.querySelector("#lastName").value;
+  let email = document.querySelector("#email").value;
+
+  alert(`Not working yet!`)
+  // alert(`${first} ${last} ${email}`)
+
+  // postData("https://tobet-api-01.herokuapp.com/api/users", {
+  //   "firstName": `${first}`,
+  //   "lastName": `${last}`,
+  //   "password": "password",
+  //   "email": `${email}`
+  // }).then(() => {
+  //   alert("success!")
+  // })
+})
+
+
+
+
+
+async function postData(url = '', data = {}) {
+  // Default options are marked with *
+  const response = await fetch(url, {
+    method: 'POST', // *GET, POST, PUT, DELETE, etc.
+    mode: 'no-cors', // no-cors, *cors, same-origin
+    cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+    credentials: 'same-origin', // include, *same-origin, omit
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+      // 'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    redirect: 'follow', // manual, *follow, error
+    referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+    body: JSON.stringify(data) // body data type must match "Content-Type" header
+  });
+  // return response.json(); // parses JSON response into native JavaScript objects
+}
+
+// postData('https://example.com/answer', { answer: 42 })
+//   .then(data => {
+//     console.log(data); // JSON data parsed by `data.json()` call
+//   });
